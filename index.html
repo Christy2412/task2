@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Data Parser</title>
+  <!-- Include any necessary CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>Import Products</h3>
+    <!-- First container for file selection -->
+    <div class="row">
+    <div class = "container">
+    <div class="file-selection">
+        <h3>Step 1: </h3>
+        <p>Select File</p>
+      <input type="file" accept=".csv, .json" id="fileInput"><br><br>
+
+      <label for="fileInput">Supported file type(s): .JSON, .CSV</label>
+      <!-- Other file specification options -->
+      <!-- ... -->
+    </div>
+</div>
+
+    <!-- Second container for file type, encoding, delimiter -->
+    <div class="container">
+    <div class="file-options">
+        <h3>Step 2:</h3>
+        <label for="filetype">File Type</label>
+        <select id="filetype" name="filetype">
+            <option value="csv">csv</option>
+            <option value="json">json</option>
+        </select>
+        <br>
+        <label for="charset">Character Encoding</label>
+        <select id="charset" name="charset">
+            <option value="utf-8">UTF-8</option>
+            <option value="utf-16">UTF-16</option>
+            <option value="iso-8859-1">ISO-8859-1</option>
+        </select>
+        <br>
+        <label for="delimiter">Delimiter</label>
+        <select id="delimiter" name="delimiter">
+            <option value=",">Comma</option>
+            <option value=";">Semicolon</option>
+            <option value="|">Pipe</option>
+        </select>
+        <br>
+        <input type="checkbox" id="myCheckbox" name="myCheckbox" value="checkboxValue">
+        <label for="myCheckbox">Has Header</label>
+
+    </div>
+</div>
+</div>
+
+    <!-- Third container for available fields -->
+    <div class="container">
+        <h3>Step 3: </h3><br>
+        <p>Display Handling</p><br>
+        <p>Select the fields to be displayed</p><br>
+        <p>Available Fields &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Selected Fields</p>
+    <div class="field-selection">
+      <select multiple id="availableFields">
+        <!-- Populate available fields here -->
+        <!-- ... -->
+        <option>Subcategory</option>
+        <option>Title</option>
+        <option>Price</option>
+        <option>Popularity</option>
+      </select>
+      <div class="buttons">
+        <button onclick="addFields()">>></button>
+        <button onclick="removeFields()"><<</button>
+      </div>
+      <select multiple id="displayFields">
+        <!-- Selected fields will appear here -->
+      </select>
+    </div>
+</div>
+
+    <!-- Buttons for displaying data -->
+    <div class="display-buttons">
+      <button onclick="displayData()">Next</button>
+      <button onclick="clearData()">Cancel</button>
+    </div>
+
+    <!-- Table to display parsed data -->
+    <table id="dataTable">
+      <!-- Table headers and data will be populated dynamically -->
+    </table>
+  
+
+  <!-- Include JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
